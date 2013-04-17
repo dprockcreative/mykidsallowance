@@ -1,0 +1,64 @@
+<?php 
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td full">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Administrate</h2>
+							<h3>Users</h3>
+						</hgroup>
+					</header>
+					<article>
+						<table id="sort" class="full" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th><span>#id</span></th>
+									<th><span>username</span></th>
+									<th><span>screenname</span></th>
+									<th><span>group</span></th>
+									<th><span>email</span></th>
+									<th><span>created</span></th>
+									<th><span>updated</span></th>
+									<th><span>logged last</span></th>
+									<th><span>allowances</span></th>
+									<th><span>Active</span></th>
+								</tr>
+							</thead>
+							<tbody><? 
+							if( count((array) $this->data->users) == 0 ): ?>
+								<tr>
+									<td colspan="9"><span>No Results</span></td>
+								</tr><?
+							else:
+								foreach($this->data->users as $row): 
+									
+								?>
+								<tr>
+									<td><span><?= $row->id; ?></span></td>
+									<td><span><a href="/admin/profile/id/<?= $row->id; ?>/"><?= $row->username; ?></a></span></td>
+									<td><span><?= $row->screenname; ?></span></td>
+									<td><span><?= ucwords(Core_Acl_Roles::getRoleFromGroupId($row->group_id)); ?></span></td>
+									<td><span><?= $row->Members->email; ?></span></td>
+									<td class="center"><span><?= date('m.d.y', strtotime($row->created)); ?></span></td>
+									<td><span><?= date('m.d.y h:ia T', strtotime($row->updated)); ?></span></td>
+									<td><span><?= date('m.d.y h:ia T', strtotime($row->lastlogin)); ?></span></td>
+									<td><span><a href="/admin/allowances/user_id/<?= $row->id; ?>/">view</a></span></td>
+									<td class="center"><span><?= (empty($row->active) ? 'No':'Yes'); ?></span></td>
+								</tr><? 
+								endforeach; 
+							endif; ?>
+							</tbody>
+						</table>
+					</article>
+				</section>
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.tables.init();
+</script>

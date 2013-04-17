@@ -1,0 +1,43 @@
+<?php 
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Administrate</h2>
+						</hgroup>
+					</header>
+					<article>
+						<div class="box corners">
+							<h4>Lists</h4>
+							<ul>
+								<li><a href="/admin/users">Users</a></li>
+								<li><a href="/admin/settings">Settings</a></li>
+								<li><a href="/admin/allowances">Allowances</a></li>
+							</ul>
+						</div>
+					</article>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.forms.init();
+</script>

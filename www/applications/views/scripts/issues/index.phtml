@@ -1,0 +1,47 @@
+<?php ?>
+<span><?= $this->request->referer; ?></span><? 
+if( count((array) $this->issues) == 0 ): ?>
+	<span>No Results</span><?
+else:
+	foreach($this->issues as $topic => $rows): ?>
+	<fieldset class="issues">
+		<legend><?= Core_Issues::getTopicToString($topic); ?></legend><? 
+		foreach($rows as $row): 
+			$ac_args 	= Core_Issues::getStatusAllowCommentsOptions();
+			$status 	= Core_Issues::getStatusToString($row->status);
+			$cstatus 	= 'c-'.strtolower($status); ?>
+			<div class="full-box corners">
+				<div class="pad">
+					<p><?= $row->issue; ?></p>
+					<span><small class="<?= $cstatus; ?>"><?= $status; ?></small> | <small><u><?= $row->name; ?></u></small> | <small><?= date("M j, Y h:i A", $row->timestamp); ?></small><? if( isset($row->form) ): ?> | <?= $row->form; ?><? endif; ?></span>
+					<div id="comments_<?= $row->id; ?>" class="comments"><? 
+					if( count((array) $row->IssueComments) > 0 ): 
+						foreach($row->IssueComments as $comment): ?>
+						<dl class="comments<?= (empty($comment->active) ? ' inactive':''); ?>">
+							<dd><p><?= $comment->comment; ?></p></dd>
+							<dt><span><small><u><?= $comment->name; ?></u></small> | <small><?= date("M j, Y h:i A", $comment->timestamp); ?></small><? if( isset($comment->form) ): ?> | <?= $comment->form; ?><? endif; ?></span></dt>
+						</dl><? 
+						endforeach;
+					endif; ?>
+					</div><? 
+					if( in_array($row->status, $ac_args) ): ?>
+					<div id="cf_<?= $row->id; ?>" class="comment-form" rel="<?= $row->id; ?>"><?
+						$form = $this->comment->form; 
+						$form->setIssueId($row->id);
+						echo $form->render(); ?>
+					</div><? 
+					endif; ?>
+				</div>
+			</div><? 
+		endforeach; ?>
+	</fieldset><? 
+	endforeach; 
+endif; ?>
+
+<?= $this->tracker->form->render(); ?>
+
+<script type="text/javascript">
+	base.common.init();
+	base.forms.init();
+	issues.comment.init();
+</script>

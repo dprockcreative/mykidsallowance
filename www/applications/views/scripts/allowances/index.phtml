@@ -1,0 +1,92 @@
+<?php 
+
+	$cp = new Core_Pay();
+	$ci = new Core_Interval();
+	$c 	= new Zend_Currency('en_US');
+
+	$colspan = 8;
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Account</h2>
+							<h3>Allowances</h3>
+						</hgroup>
+					</header>
+					<article><? 
+
+					if( ! $this->data->userHasSettings): ?>
+						<?= $this->render('templates/allowances.start.tpl'); ?><?
+					elseif( ! $this->data->userHasAllowances): ?>
+						<?= $this->render('templates/allowances.welcome.tpl'); ?><?
+					else: ?>
+						<table class="sparse" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th><span>#</span></th>
+									<th>&nbsp;</th>
+									<th><span>base</span></th>
+									<th><span>interval</span></th>
+									<th><span>latest</span></th>
+									<th><span>history</span></th>
+									<th><span>updated</span></th>
+									<th><span>Active</span></th>
+								</tr>
+							</thead>
+							<tbody><? 
+							if( count((array) $this->data->allowances) == 0 ): ?>
+								<tr>
+									<td colspan="<?= $colspan; ?>"><span>No Results</span></td>
+								</tr><?
+							else:
+								foreach($this->data->allowances as $row): 
+
+								?>
+								<tr>
+									<td class="id"><span><?= $row->id; ?></span></td>
+									<td><span><a href="/allowances/allowance/id/<?= $row->id; ?>/"><?= $row->label; ?></a></span></td>
+									<td><span><?= $c->toCurrency(AllowanceConfigs::getBaseAmount($row->id)); ?></span></td>
+									<td><span><?= $ci->getLabelByPeriod($row->period); ?></span></td>
+									<td><span><?= (empty($row->active) ? '--':'<a href="/allowances/stub/id/'.$row->id.'/">stub</a>'); ?></span></td>
+									<td><span><?= (empty($row->active) ? '--':'<a href="/allowances/history/id/'.$row->id.'/">history</a>'); ?></span></td>
+									<td><span><?= Core_Helper::userUpdated($row->editor_id, $row->updated); ?></span></td>
+									<td class="center"><span><?= (empty($row->active) ? 'No':'Yes'); ?></span></td>
+								</tr><? 
+								endforeach; 
+							endif; ?>
+							</tbody>
+						</table>
+						<span class="submit-block">
+							<a href="/allowances/allowance/id/0/">Add Allowance</a>
+						</span><? 
+					endif; ?>
+					</article>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+				<br />
+
+				<?= $this->render('index/section.phtml', $this->data); ?>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.tables.init();
+</script>

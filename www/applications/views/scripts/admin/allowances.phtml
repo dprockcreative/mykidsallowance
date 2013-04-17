@@ -1,0 +1,83 @@
+<?php 
+	$colspan = 5;
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Admin</h2>
+							<h3>Allowances</h3>
+						</hgroup>
+					</header>
+					<article>
+						<table id="sort" class="full auto" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th><span>#id</span></th>
+									<th><span>label</span></th>
+									<th><span>owner</span></th>
+									<th><span>updated</span></th>
+									<th><span>Active</span></th>
+								</tr>
+							</thead>
+							<tbody><? 
+							if( count((array) $this->data->allowances) == 0 ): ?>
+								<tr>
+									<td colspan="<?= $colspan; ?>"><span>No results</span></td>
+								</tr><?
+							else:
+								foreach($this->data->allowances as $row): ?>
+								<tr>
+									<td class="id"><span><?= $row->id; ?></span></td>
+									<td><span><a href="/admin/allowance/id/<?= $row->id; ?>/"><?= $row->label; ?></a></span></td>
+									<td><span><a href="/admin/allowances/user_id/<?= $row->user_id; ?>/"><?= Core_Helper::userScreename($row->user_id); ?></a></span></td>
+									<td><span><?= Core_Helper::userUpdated($row->editor_id, $row->updated); ?></span></td>
+									<td class="center"><span><?= (empty($row->active) ? 'No':'Yes'); ?></span></td>
+								</tr><? 
+								endforeach;
+							endif; ?>
+							</tbody>
+						</table>
+					</article>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Admin</h4> 
+					</header>
+					<ul class="section">
+						<li><a href="/admin/users">users</a></li>
+						<li><a href="/admin/settings">settings</a></li>
+						<li><a href="/admin/allowances">allowances</a></li>
+					</ul>
+				</aside>
+
+				<? if($this->data->is_detail): ?>
+				<br />
+
+				<aside>
+					<header>
+						<h4><?= $this->data->admin->user->screenname; ?>&rsquo;s</h4> 
+					</header>
+					<ul class="section">
+						<li><a href="/admin/profile/id/<?= $this->data->admin->user->id; ?>/">profile</a></li>
+						<li><a href="/admin/settings/user_id/<?= $this->data->admin->user->id; ?>/">settings</a></li>
+						<li>allowances</li>
+					</ul>
+				</aside>
+				<? endif; ?>
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.tables.init();
+</script>

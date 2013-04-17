@@ -1,0 +1,44 @@
+<?php 
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Account</h2>
+						</hgroup>
+					</header>
+					<article>
+						<div class="box corners">
+							<h4>Manage</h4>
+							<ul>
+								<li><a href="/account/profile">Profile</a></li>
+								<li><a href="/allowances/settings">Settings</a></li>
+								<li><a href="/allowances">Allowances</a></li>
+							</ul>
+						</div>
+					</article>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+				<br />
+
+				<?= $this->render('index/section.phtml', $this->data); ?>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>

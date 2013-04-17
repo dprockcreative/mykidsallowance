@@ -1,0 +1,38 @@
+<?php 
+
+	$this->addHelperPath('Core/View/Helper', 'Core_View_Helper');
+
+	$section = $this->section(1);
+
+	//print_r($section);die;
+?>
+<? if( count((array) $section) > 0 ): ?>
+<aside><? 
+foreach($section->items as $items): ?>
+	<header>
+		<h4><?= $items->label; ?></h4>
+	</header>
+	<ul class="section"><? 
+	foreach($items->links as $link): 
+		if( empty($link->active) ): ?>
+		<li><a href="<?= $link->href; ?>"><?= $link->label; ?></a><?
+		else: ?>
+		<li><?= $link->label; ?><? 
+		endif;
+		if( isset($link->sublinks) ): ?>
+			<ul><? 
+			foreach($link->sublinks as $sublink): 
+				if( empty($sublink->active) ): ?>
+				<li><a href="<?= $sublink->href; ?>"><?= $sublink->label; ?></a></li><?
+				else: ?>
+				<li><?= $sublink->label; ?></li><? 
+				endif;
+			endforeach; ?>
+			</ul>
+		<? endif; ?>
+		</li><?
+	endforeach; ?>
+	</ul><br /><?
+endforeach; ?>
+</aside>
+<? endif; ?>

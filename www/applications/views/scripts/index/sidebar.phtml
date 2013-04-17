@@ -1,0 +1,9 @@
+<?php 
+	if( ! empty($this->data->activity) ):
+?>
+<ul>
+	<li>last login: <?= date("F j, Y :: g:i a", $this->data->activity['lastlogin']['stt']); ?></li>
+	<li>updated: <?= date("F j, Y :: g:i a", $this->data->activity['updated']['stt']); ?></li>
+	<li>by: <?= $this->data->activity['editor']['screenname']; ?></li>
+</ul><? 
+	endif;

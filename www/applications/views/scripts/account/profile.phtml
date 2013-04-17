@@ -1,0 +1,40 @@
+<?php 
+
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Account</h2>
+							<h3>Profile</h3>
+						</hgroup>
+					</header>
+					<?= $this->data->account->form; ?>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+				<br />
+
+				<?= $this->render('index/section.phtml', $this->data); ?>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.forms.init();
+</script>

@@ -1,0 +1,75 @@
+<?php 
+
+	$colspan = 4;
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Allowances</h2>
+							<h3>Settings</h3>
+						</hgroup>
+					</header>
+					<article><? 
+
+					if( ! $this->data->userHasSettings): ?>
+						<?= $this->render('templates/settings.welcome.tpl'); ?><?
+					else: ?>
+						<table class="sparse" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th><span>#</span></th>
+									<th>&nbsp;</th>
+									<th><span>type</span></th>
+								</tr>
+							</thead>
+							<tbody><? 
+							if( count((array) $this->data->configurations) == 0 ): ?>
+								<tr>
+									<td colspan="<?= $colspan; ?>"><span>No Results</span></td>
+								</tr><?
+							else:
+								foreach($this->data->configurations as $row): ?>
+								<tr>
+									<td class="id"><span><?= $row->id; ?></span></td>
+									<td><span><a href="/allowances/setting/id/<?= $row->id; ?>/"><?= $row->label; ?></a></span></td>
+									<td><span><?= $row->Types->type; ?></span></td>
+									<td><span><a class="delete-item" href="table=Configurations&amp;key=<?= $row->id; ?>">delete</a></span></td>
+								</tr><? 
+								endforeach; 
+							endif; ?>
+							</tbody>
+						</table>
+						<span class="submit-block">
+							<a href="/allowances/setting/id/0/">Add Setting</a>
+						</span><? 
+					endif; ?>
+					</article>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+				<br />
+
+				<?= $this->render('index/section.phtml', $this->data); ?>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.tables.init();
+</script>

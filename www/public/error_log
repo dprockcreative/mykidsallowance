@@ -1,0 +1,88 @@
+[01-Feb-2011 20:26:43] PHP Fatal error:  Class 'Core_Plugins_Auth' not found in /home/mykidsal/public_html/stage/applications/Bootstrap.php on line 29
+[03-Feb-2011 13:35:29] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'The specified doctype is malformed' in /home/mykidsal/public_html/library/Zend/View/Helper/Doctype.php:130
+Stack trace:
+#0 [internal function]: Zend_View_Helper_Doctype->doctype('STRICT')
+#1 /home/mykidsal/public_html/library/Zend/View/Abstract.php(342): call_user_func_array(Array, Array)
+#2 /home/mykidsal/public_html/stage/applications/Bootstrap.php(92): Zend_View_Abstract->__call('doctype', Array)
+#3 /home/mykidsal/public_html/stage/applications/Bootstrap.php(92): Zend_View->doctype('STRICT')
+#4 /home/mykidsal/public_html/library/Zend/Application/Bootstrap/BootstrapAbstract.php(666): Bootstrap->_initDoctype()
+#5 /home/mykidsal/public_html/library/Zend/Application/Bootstrap/BootstrapAbstract.php(619): Zend_Application_Bootstrap_BootstrapAbstract->_executeResource('doctype')
+#6 /home/mykidsal/public_html/library/Zend/Application/Bootstrap/BootstrapAbstract.php(583): Zend_Application_Bootstrap_BootstrapAbstract->_bootstrap(NULL)
+#7 /home/mykidsal/public_ht in /home/mykidsal/public_html/library/Zend/View/Helper/Doctype.php on line 130
+[03-Feb-2011 13:35:46] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'The specified doctype is malformed' in /home/mykidsal/public_html/library/Zend/View/Helper/Doctype.php:130
+Stack trace:
+#0 [internal function]: Zend_View_Helper_Doctype->doctype('strict')
+#1 /home/mykidsal/public_html/library/Zend/View/Abstract.php(342): call_user_func_array(Array, Array)
+#2 /home/mykidsal/public_html/stage/applications/Bootstrap.php(92): Zend_View_Abstract->__call('doctype', Array)
+#3 /home/mykidsal/public_html/stage/applications/Bootstrap.php(92): Zend_View->doctype('strict')
+#4 /home/mykidsal/public_html/library/Zend/Application/Bootstrap/BootstrapAbstract.php(666): Bootstrap->_initDoctype()
+#5 /home/mykidsal/public_html/library/Zend/Application/Bootstrap/BootstrapAbstract.php(619): Zend_Application_Bootstrap_BootstrapAbstract->_executeResource('doctype')
+#6 /home/mykidsal/public_html/library/Zend/Application/Bootstrap/BootstrapAbstract.php(583): Zend_Application_Bootstrap_BootstrapAbstract->_bootstrap(NULL)
+#7 /home/mykidsal/public_ht in /home/mykidsal/public_html/library/Zend/View/Helper/Doctype.php on line 130
+[03-Feb-2011 13:36:29] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'Invalid value passed to set; please use setMeta()' in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php:296
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php(180): Zend_View_Helper_HeadMeta->set(Object(stdClass))
+#1 /home/mykidsal/public_html/stage/applications/layouts/scripts/layout.phtml(26): Zend_View_Helper_HeadMeta->setCharset('utf-8')
+#2 /home/mykidsal/public_html/library/Zend/View.php(108): include('/home/mykidsal/...')
+#3 /home/mykidsal/public_html/library/Zend/View/Abstract.php(880): Zend_View->_run('/home/mykidsal/...')
+#4 /home/mykidsal/public_html/library/Zend/Layout.php(796): Zend_View_Abstract->render('layout.phtml')
+#5 /home/mykidsal/public_html/library/Zend/Layout/Controller/Plugin/Layout.php(143): Zend_Layout->render()
+#6 /home/mykidsal/public_html/library/Zend/Controller/Plugin/Broker.php(331): Zend_Layout_Controller_Plugin_Layout->postDispatch(Object(Zend_Controller_Request_Http))
+#7 /home/m in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php on line 296
+[03-Feb-2011 13:36:30] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'Invalid value passed to set; please use setMeta()' in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php:296
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php(180): Zend_View_Helper_HeadMeta->set(Object(stdClass))
+#1 /home/mykidsal/public_html/stage/applications/layouts/scripts/layout.phtml(26): Zend_View_Helper_HeadMeta->setCharset('utf-8')
+#2 /home/mykidsal/public_html/library/Zend/View.php(108): include('/home/mykidsal/...')
+#3 /home/mykidsal/public_html/library/Zend/View/Abstract.php(880): Zend_View->_run('/home/mykidsal/...')
+#4 /home/mykidsal/public_html/library/Zend/Layout.php(796): Zend_View_Abstract->render('layout.phtml')
+#5 /home/mykidsal/public_html/library/Zend/Layout/Controller/Plugin/Layout.php(143): Zend_Layout->render()
+#6 /home/mykidsal/public_html/library/Zend/Controller/Plugin/Broker.php(331): Zend_Layout_Controller_Plugin_Layout->postDispatch(Object(Zend_Controller_Request_Http))
+#7 /home/m in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php on line 296
+[03-Feb-2011 13:37:57] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'Invalid value passed to set; please use setMeta()' in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php:296
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php(180): Zend_View_Helper_HeadMeta->set(Object(stdClass))
+#1 /home/mykidsal/public_html/stage/applications/layouts/scripts/layout.phtml(26): Zend_View_Helper_HeadMeta->setCharset('utf-8')
+#2 /home/mykidsal/public_html/library/Zend/View.php(108): include('/home/mykidsal/...')
+#3 /home/mykidsal/public_html/library/Zend/View/Abstract.php(880): Zend_View->_run('/home/mykidsal/...')
+#4 /home/mykidsal/public_html/library/Zend/Layout.php(796): Zend_View_Abstract->render('layout.phtml')
+#5 /home/mykidsal/public_html/library/Zend/Layout/Controller/Plugin/Layout.php(143): Zend_Layout->render()
+#6 /home/mykidsal/public_html/library/Zend/Controller/Plugin/Broker.php(331): Zend_Layout_Controller_Plugin_Layout->postDispatch(Object(Zend_Controller_Request_Http))
+#7 /home/m in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php on line 296
+[03-Feb-2011 13:37:59] PHP Fatal error:  Uncaught exception 'Zend_View_Exception' with message 'Invalid value passed to set; please use setMeta()' in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php:296
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php(180): Zend_View_Helper_HeadMeta->set(Object(stdClass))
+#1 /home/mykidsal/public_html/stage/applications/layouts/scripts/layout.phtml(26): Zend_View_Helper_HeadMeta->setCharset('utf-8')
+#2 /home/mykidsal/public_html/library/Zend/View.php(108): include('/home/mykidsal/...')
+#3 /home/mykidsal/public_html/library/Zend/View/Abstract.php(880): Zend_View->_run('/home/mykidsal/...')
+#4 /home/mykidsal/public_html/library/Zend/Layout.php(796): Zend_View_Abstract->render('layout.phtml')
+#5 /home/mykidsal/public_html/library/Zend/Layout/Controller/Plugin/Layout.php(143): Zend_Layout->render()
+#6 /home/mykidsal/public_html/library/Zend/Controller/Plugin/Broker.php(331): Zend_Layout_Controller_Plugin_Layout->postDispatch(Object(Zend_Controller_Request_Http))
+#7 /home/m in /home/mykidsal/public_html/library/Zend/View/Helper/HeadMeta.php on line 296
+[03-Feb-2011 15:41:10] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/mykidsal/public_html/stage/applications/layouts/scripts/layout.phtml on line 26
+[03-Feb-2011 15:41:11] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/mykidsal/public_html/stage/applications/layouts/scripts/layout.phtml on line 26
+[03-Jul-2011 08:22:09] PHP Fatal error:  Uncaught exception 'Zend_Session_Exception' with message 'Zend_Session::start() - /home/mykidsal/public_html/library/Zend/Session.php(Line:480): Error #2 session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_46185aece3ce4263548d407ec96ad249, O_RDWR) failed: No space left on device (28) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(/tmp/sess_46185aece3ce4263548d407ec96ad249, O_RDWR) failed: No space left on device (28) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) Array' in /home/mykidsal/public_html/library/Zend/Session.php:493
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/Session/Namespa in /home/mykidsal/public_html/library/Zend/Session.php on line 493
+[03-Jul-2011 11:47:19] PHP Fatal error:  Uncaught exception 'Zend_Session_Exception' with message 'Zend_Session::start() - /home/mykidsal/public_html/library/Zend/Session.php(Line:480): Error #2 session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_88786c710191eea956888444f20d1add, O_RDWR) failed: No space left on device (28) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(/tmp/sess_88786c710191eea956888444f20d1add, O_RDWR) failed: No space left on device (28) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) Array' in /home/mykidsal/public_html/library/Zend/Session.php:493
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/Session/Namespa in /home/mykidsal/public_html/library/Zend/Session.php on line 493
+[03-Jul-2011 14:59:50] PHP Fatal error:  Uncaught exception 'Zend_Session_Exception' with message 'Zend_Session::start() - /home/mykidsal/public_html/library/Zend/Session.php(Line:480): Error #2 session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_cbdd2170b18f9c39ba197e93de66032b, O_RDWR) failed: No space left on device (28) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(/tmp/sess_cbdd2170b18f9c39ba197e93de66032b, O_RDWR) failed: No space left on device (28) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) Array' in /home/mykidsal/public_html/library/Zend/Session.php:493
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/Session/Namespa in /home/mykidsal/public_html/library/Zend/Session.php on line 493
+[13-Nov-2011 21:46:02] PHP Fatal error:  Uncaught exception 'Zend_Session_Exception' with message 'Zend_Session::start() - /home/mykidsal/public_html/library/Zend/Session.php(Line:480): Error #2 session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_f988c093faa7d64d12aef54f02ecb9cf, O_RDWR) failed: Read-only file system (30) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(/tmp/sess_f988c093faa7d64d12aef54f02ecb9cf, O_RDWR) failed: Read-only file system (30) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) Array' in /home/mykidsal/public_html/library/Zend/Session.php:493
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/Session/Namespace.p in /home/mykidsal/public_html/library/Zend/Session.php on line 493
+[14-Nov-2011 04:28:32] PHP Fatal error:  Uncaught exception 'Zend_Session_Exception' with message 'Zend_Session::start() - /home/mykidsal/public_html/library/Zend/Session.php(Line:480): Error #2 session_start() [<a href='function.session-start'>function.session-start</a>]: open(/tmp/sess_063f12ed0ae9605640d05707eae18f24, O_RDWR) failed: Read-only file system (30) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: open(/tmp/sess_063f12ed0ae9605640d05707eae18f24, O_RDWR) failed: Read-only file system (30) Array
+/home/mykidsal/public_html/library/Zend/Session.php(Line:490): Error #2 session_write_close() [<a href='function.session-write-close'>function.session-write-close</a>]: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) Array' in /home/mykidsal/public_html/library/Zend/Session.php:493
+Stack trace:
+#0 /home/mykidsal/public_html/library/Zend/Session/Namespace.p in /home/mykidsal/public_html/library/Zend/Session.php on line 493

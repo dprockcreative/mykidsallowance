@@ -1,0 +1,13 @@
+SetEnv APPLICATION_ENV production
+
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteRule ^(.*)sitemap.xml$ /sitemap/index [L]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule !\.(flv|f4v|ico|gif|jpg|png|wav|swf|js|css|xml)$ index.php [NC,L]

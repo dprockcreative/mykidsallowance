@@ -1,0 +1,19 @@
+<?php 
+	$msg = '';
+	$red = false;
+	foreach($this->data->fms as $type => $fm) {
+		if( array_key_exists('redirect', $fm) ) {
+			$red = $fm['redirect'];
+			unset($fm['redirect']);
+		}
+		if( is_array($fm) ) {
+			$cls  = key($fm);
+			$msg .= '<span>'.implode('&nbsp;|&nbsp;', $fm).'</span>';
+		} else {
+			$cls = 'notice';
+			$msg .= '<span>'.$fm.'</span>&nbsp;&nbsp;';
+		}
+	}
+?>
+
+<div class="<?= $cls; ?>"><?= $msg; ?><?= ( empty($red) ) ? '':'<img src="/assets/img/bump.gif" alt="" onload=\'_timer(2, "redirect", "'.$red.'");\' />'; ?></div>

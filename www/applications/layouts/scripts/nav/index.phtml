@@ -1,0 +1,15 @@
+<?php 
+	$breadcrumb = $this->navigation()->breadcrumbs()->setMinDepth(0)->setLinkLast(false)->setSeparator(' &raquo;' . PHP_EOL);
+	$navigation = preg_replace('#>\s*<#i', '><', $this->navigation()->menu()->setMaxDepth(0)->render());
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td">
+			<div class="minipad">
+				<nav><?= ( ($breadcrumb == '') ? '&nbsp;':$breadcrumb); ?></nav>
+				<nav><?= $navigation; ?></nav>
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>

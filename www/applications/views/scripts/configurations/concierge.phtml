@@ -1,0 +1,45 @@
+<?php 
+
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Allowances</h2>
+							<h3>Concierge Service</h3>
+						</hgroup>
+					</header>
+					<article>
+						<p>
+							Simply click the button below to have an Allowance Setup created for you.
+						</p>
+					</article>
+					<?= $this->data->concierge->form; ?>
+				</section>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+				<br />
+
+				<?= $this->render('index/section.phtml', $this->data); ?>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.forms.init();
+</script>

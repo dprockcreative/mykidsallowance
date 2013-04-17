@@ -1,0 +1,112 @@
+<?php 
+	//Core_P::p($this->data->history, 1);
+?>
+<div class="table">
+	<div class="tr">
+		<div class="td wide">
+			<div class="pad">
+				<section>
+					<header>
+						<hgroup>
+							<h2>Allowances</h2>
+							<h3><?= $this->data->allowance->label; ?>&rsquo;s History</h3>
+						</hgroup>
+					</header>
+				</section>
+				<article><? 
+				if( ! empty($this->data->history) ): 
+					//Core_P::p($this->data->history, 1);
+					if( ! empty($this->data->history->rows) ): 
+						foreach($this->data->history->rows as $i => $row):
+						?>
+						<fieldset class="history">
+							<legend><span>Period: <time datetime="<?= $row->period_from; ?>"><?= date('m.d.y', strtotime($row->period_from)); ?></time> &mdash; <time datetime="<?= $row->period_to; ?>"><?= date('m.d.y', strtotime($row->period_to)); ?></time></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<small><span>created: <time datetime="<?= $row->created; ?>"><?= date('F j, Y', strtotime($row->created)); ?></time></span></small></legend><? 
+							if( isset($row->Earnings) && count((array) $row->Earnings) > 0 ): ?> 
+							<ul class="mcorners">
+								<li class="label">Earnings</li><li><? 
+								foreach($row->Earnings as $earnings): ?>
+									<dl><dt><?= $earnings->label; ?></dt><dd><?= $earnings->current->string; ?></dd></dl><?
+								endforeach; ?>
+								</li>
+							</ul><?
+							endif;
+
+							if( isset($row->Deductions) && count((array) $row->Deductions) > 0 ): ?> 
+							<ul class="mcorners deductions">
+								<li class="label">Deductions</li><li><? 
+								foreach($row->Deductions as $deductions): ?>
+									<dl><dt><?= $deductions->label; ?></dt><dd><?= $deductions->current->string; ?></dd></dl><?
+								endforeach; ?>
+								</li>
+							</ul><?
+							endif; 
+
+							if( isset($row->subtotal) > 0 ): ?> 
+							<ul class="mcorners">
+								<li class="label">Period Total</li><li>
+									<dl class="stretch"><dd><?= $row->subtotal->string; ?></dd></dl>
+								</li>
+							</ul><?
+							endif; ?>
+	
+						</fieldset><?
+						endforeach;
+					endif; ?>
+
+					<fieldset class="history"><?
+	
+						if( isset($this->data->history->total) > 0 ): ?> 
+						<ul class="mcorners">
+							<li class="label">Total</li><li>
+								<dl class="stretch"><dd><?= $this->data->history->total->string; ?></dd></dl>
+							</li>
+						</ul><?
+						endif; ?>
+
+					</fieldset><?
+
+				endif;
+				?>
+				</article>
+
+				<p class="submit-block">
+					<a href="javascript:void(0);" class="print"><button>Print History</button></a>
+				</p>
+			</div>
+		</div>
+		<div class="td gutter">&nbsp;</div>
+		<div class="td side">
+			<div class="pad">
+				<aside>
+					<header>
+						<h4>Activity</h4>
+					</header>
+					<?= $this->render('index/sidebar.phtml'); ?>
+				</aside>
+
+				<br />
+
+				<?= $this->render('index/section.phtml', $this->data); ?>
+
+				<?
+				if( ! empty($this->data->allowance->id) ): ?>
+				<aside>
+					<header>
+						<h5><?= $this->data->allowance->label; ?>&rsquo;s Allowance</h5>
+					</header>
+					<ul>
+						<li><a href="/allowances/allowance/id/<?= $this->data->allowance->id; ?>/">Set Up</a></li>
+						<li><a href="/allowances/stub/id/<?= $this->data->allowance->id; ?>/">Current Stub</a></li>
+						<li>History</li>
+					</ul>
+				</aside><? 
+				endif; ?>
+
+			</div>
+		</div>
+		<div class="td exp">&nbsp;</div>
+	</div>
+</div>
+<script type="text/javascript">
+	base.forms.init();
+</script>

@@ -1,0 +1,265 @@
+body { font-family: helvetica, arial, sans-serif;background: transparent; }
+.td h2, .td h3, .td h4, .td h5, .td p, .minipage, .side, .footer, .tracker, #ol { display: none !important; }
+
+fieldset.details {
+	display: block;
+	position: relative;
+	width: 601px;
+	margin: 10px 0 0 0;
+	padding: 0;
+	background: #eee;
+	border: 1px solid #ccc !important;
+	text-align: center;
+}
+
+fieldset.details legend {
+}
+
+fieldset.details legend span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 300px;
+	font-size: 9pt;
+	color: #666;
+	margin: 0;
+	padding: 10px 0 0 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+fieldset.details ol {
+	width: 301px;
+	font-size: 8.5pt;
+	margin: 0 0 0 301px;
+	padding: 0;
+	background: #fff;
+	border-bottom: 2px solid #999;
+	border-left: 1px solid #ccc;
+}
+
+fieldset.details ol:last-child {
+	border-bottom: none;
+}
+
+fieldset.details ol li {
+	display: inline-block;
+	width: 148px;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #fff;
+}
+
+fieldset.details ol li:last-child {
+	width: 149px;
+	border: none;
+}
+
+fieldset.details ol li.label {
+	display: block;
+	width: 297px;
+	padding: 2px 0 1px 0;
+	background: #f0f0f0;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #fff;
+	clear: both;
+}
+
+fieldset.details ol li dl {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+fieldset.details ol li dl dt, 
+fieldset.details ol li dl dd {
+	display: block;
+	margin: 0;
+	padding: 2px 0 1px 0;
+	border: none;
+}
+
+fieldset.details ol li dl dt {
+	color: #666;
+	background: #f6f6f6;
+}
+
+fieldset.details ol li dl dd {
+	color: #000;
+	border-top: 1px solid #ccc;
+}
+
+fieldset.minus ol li dl dd {
+	color: #cc0000;
+}
+
+fieldset.stats {
+	position: relative;
+	display: block;
+	width: 601px !important;
+	margin: 10px 0 0 0 !important;
+	padding: 0 !important;
+	background: #eee;
+	border: 1px solid #ccc !important;
+	text-align: center;
+}
+
+fieldset.stats legend {
+}
+
+fieldset.stats legend span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 140px;
+	font-size: 9pt;
+	color: #666;
+	margin: 0;
+	padding: 10px 0 0 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+fieldset.stats ol {
+	width: 501px;
+	font-size: 8.5pt;
+	margin: 0 0 0 141px;
+	padding: 0;
+	background: #fff;
+	border-bottom: 2px solid #999;
+	border-left: 1px solid #ccc;
+}
+
+fieldset.stats ol:last-child {
+	border-bottom: none;
+}
+
+fieldset.stats ol li {
+	display: inline-block;
+	width: 113px;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #fff;
+}
+
+fieldset.stats ol li:last-child {
+	width: 114px;
+	border: none;
+}
+
+fieldset.stats ol li.label {
+	display: block;
+	width: 97px;
+	padding: 2px 0 1px 0;
+	background: #f0f0f0;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #fff;
+	clear: both;
+}
+
+fieldset.stats ol li dl {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+fieldset.stats ol li dl dt, 
+fieldset.stats ol li dl dd {
+	display: block;
+	margin: 0;
+	padding: 2px 0 1px 0;
+	border: none;
+}
+
+fieldset.stats ol li dl dt {
+	color: #666;
+	background: #f6f6f6;
+}
+
+fieldset.stats ol li dl dd {
+	color: #000;
+	border-top: 1px solid #ccc;
+}
+
+
+fieldset.history {
+	display: block;
+	width: 600px;
+	height: auto;
+	margin: 10px 0;
+	background-color: #fcfefe;
+	background-color: rgba(2, 178, 204, 0.01);
+	border: 1px solid #f6f6f6;
+}
+
+fieldset.history:hover {
+	background-color: #e5f7fa;
+	background-color: rgba(2, 178, 204, 0.1);
+}
+
+fieldset.history ul {
+	list-style: none;
+	font-size: 8.5pt;
+	margin: 7px 0 0 0;
+	padding: 0;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+fieldset.history ul li {
+	display: inline-block;
+	width: 59%;
+	list-style: none;
+	vertical-align: top;
+}
+
+fieldset.history ul li.label {
+	width: 39%;	
+	padding: 1% 0 0 2%;
+	border: none;
+}
+
+fieldset.history ul li dl {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+
+fieldset.history ul li dl:first-child {
+	border-top: none;
+}
+
+fieldset.history ul li dl dt, 
+fieldset.history ul li dl dd {
+	display: inline-block;
+	width: 45%;
+	margin: 0;
+	padding: 6px 0 4px 0;
+	border: none;
+}
+
+
+fieldset.history ul li dl dt {
+	color: #666;
+	padding-left: 4%;
+}
+
+fieldset.history ul li dl dd {
+	color: #000;
+	border-left: 1px solid #ccc;
+	text-align: right;
+	padding-right: 4%;
+}
+
+fieldset.history ul.deductions li dl dd {
+	color: #cc0000;
+}
+
+fieldset.history ul li dl.stretch dd {
+	width: 94%;
+	border-left: none;
+}

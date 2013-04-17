@@ -1,4 +1,5 @@
-mykidsallowance
-===============
+My Kid's Allowance
+==
 
-Small site in Zend Framework, mySQL, html5, javascript &amp; css
+# Install
+May be dragged & dropped into any LAMP (MAMP) server config.

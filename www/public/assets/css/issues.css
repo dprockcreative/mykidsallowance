@@ -1,0 +1,72 @@
+.tracker {
+	background-color: #ccf0f5;
+	background-color: rgba(204, 240, 245, 0.95);
+	border: 1px solid #00282e;
+	border: 1px solid rgba(2, 178, 204, 0.6);
+}
+
+div.full-box {
+	display: block;
+	margin: 14px;
+	background: #fefefe;
+	border: 1px solid #f6f6f6;
+	vertical-align: top;
+}
+
+fieldset.issues {
+	display: block;
+	width: 94%;
+	margin: 10px 0 20px 0;
+	background-color: #fcfefe;
+	background-color: rgba(2, 178, 204, 0.01);
+	border: 1px solid #fff;
+
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+}
+
+fieldset.issues:hover {
+	background-color: #e5f7fa;
+	background-color: rgba(2, 178, 204, 0.1);
+}
+
+dl.comments {
+	display: block;
+	width: 810px;
+	margin: 7px 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+dl.comments dt, 
+dl.comments dd {
+	display: block;
+	margin: 0;
+}
+
+dl.comments dd {
+	padding: 0 7px 4px 20px;
+	background: #fcfcfc;
+	background: rgba(0, 0, 0, 0.025);
+	border-top: 1px dotted #ccc;
+}
+
+dl.comments dt {
+	padding-top: 14px;
+	padding-left: 30px;
+	background: transparent url(/assets/img/ui/wedge.png) no-repeat 30px top;
+}
+
+fieldset.issues form {
+	display: inline;
+}
+
+dl.comments.inactive {
+	color: #eee;
+}
+
+dl.comments.inactive dd {
+	opacity: 0.3;
+}
